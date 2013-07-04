@@ -23,7 +23,7 @@
  * License Header, with the fields enclosed by brackets [] replaced by
  * your own identifying information:
  * "Portions Copyrighted [year] [name of copyright owner]"
- * 
+ *
  * If you wish your version of this file to be governed by only the CDDL
  * or only the GPL Version 2, indicate your decision by adding
  * "[Contributor] elects to include this software in this distribution
@@ -34,9 +34,9 @@
  * However, if you add GPL Version 2 code and therefore, elected the GPL
  * Version 2 license, then the option applies only if the new code is
  * made subject to such option by the copyright holder.
- * 
+ *
  * Contributor(s):
- * 
+ *
  * Portions Copyrighted 2008 Sun Microsystems, Inc.
  */
 package org.netbeans.modules.languages.scss.completion;
@@ -343,7 +343,8 @@ public class ScssCompletion implements CodeCompletionHandler {
         Collection<? extends TokenId> searchedId = new ArrayList<TokenId>(Arrays.asList(new TokenId[]{ScssLanguageHierarchy.getToken(ScssLexer.LBRACE), ScssLanguageHierarchy.getToken(ScssLexer.SEMI)}));
         Token propertyName = LexerUtils.followsToken(ts, searchedId, true, true, ScssLanguageHierarchy.getToken(ScssLexer.WS), ScssLanguageHierarchy.getToken(ScssLexer.NL), ScssLanguageHierarchy.getToken(ScssLexer.ML_COMMENT), ScssLanguageHierarchy.getToken(ScssLexer.UNKNOWN_DIR));
 
-        return propertyName != null;
+        return true;
+//        return propertyName != null;
     }
 
     private boolean isProperty(TokenSequence ts, int offset) {
